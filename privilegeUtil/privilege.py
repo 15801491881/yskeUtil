@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from openpyxl import load_workbook
+import pandas as pd
 #
 # post={"HO":[{"Code": "Admin","Name":"管理员","Module":["POS","TICKET_MANAGE"]},
 #             {"Code": "SCHEDULE", "Name": "排片", "Module": ["POS", "TICKET_MANAGE"]}]}
@@ -54,7 +55,16 @@ def loadPostPrivilege(list):
     print(POST.get("HO")[0]["Module"])
     postPrivilegeList = __getPrivilegeByModules(modules,list)
     print(len(postPrivilegeList))
+    return postPrivilegeList
 
-loadPostPrivilege(loadPrivilege())
+def writeCSV(filePath,ll):
+    name_attribute = ['NumberID', 'UserID', 'ModuleID', 'StartDate', 'EndDate', 'Frequent']
+    writerCSV = pd.DataFrame(columns=name_attribute, data=data)
+    writerCSV.to_csv('./no_fre.csv', encoding='utf-8')
+
+
+
+pList = loadPostPrivilege(loadPrivilege())
+writeCSV("post.csv",pList)
 
 
