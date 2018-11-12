@@ -48,6 +48,7 @@ def __getPrivilegeByModules(modules,list):
     return ll
 
 
+
 def loadPostPrivilege(list):
     modules = POST.get("HO")[0]["Module"]
     print(POST.get("HO")[0]["Module"])
@@ -55,4 +56,5 @@ def loadPostPrivilege(list):
     print(len(postPrivilegeList))
 
 loadPostPrivilege(loadPrivilege())
+
 
