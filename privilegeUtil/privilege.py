@@ -55,3 +55,4 @@ def loadPostPrivilege(list):
     print(len(postPrivilegeList))
 
 loadPostPrivilege(loadPrivilege())
+
