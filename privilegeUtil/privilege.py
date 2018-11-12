@@ -53,4 +53,5 @@ def loadPostPrivilege(list):
     print(POST.get("HO")[0]["Module"])
     postPrivilegeList = __getPrivilegeByModules(modules,list)
     print(len(postPrivilegeList))
+
 loadPostPrivilege(loadPrivilege())
